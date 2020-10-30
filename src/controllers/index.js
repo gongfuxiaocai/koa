@@ -5,8 +5,8 @@ const controller = {
 
   getResult ( ctx, next ) {
     // 判断手机号是否传递，不传会报错
-    const requestBody = { ...ctx.request.userId }
-    if (!requestBody.userId) {
+    const requestBody = { ...ctx.request.phone }
+    if (!requestBody.phone) {
       ctx.body = {
         code: 200,
         success: false,
@@ -28,7 +28,7 @@ const controller = {
       // 重列表中找到对应的一个数据
       const resultArr = JSON.parse(fileStr)
       resultArr.forEach((item) => {
-        if (item.userId === requestBody.userId) {
+        if (item.phone === requestBody.phone) {
           resut = item
         }
       })
@@ -130,7 +130,7 @@ const controller = {
     let resultList = null
     let evel = 20
 
-    if (requestBody.uaerId % 2 === 0) {
+    if (requestBody.phone % 2 === 0) {
       evel = 50
     }
     
@@ -140,11 +140,7 @@ const controller = {
     }
 
     const currentUser = {
-      name: userData.name,
-      gender: userData.gender,
-      age: userData.age,
-      phone: userData.phone,
-      position: userData.position,
+      ...userData,
       mark: mark,
       average: Number((total / 6).toFixed(0)),
       createTime: new Date().getTime()
