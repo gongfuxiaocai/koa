@@ -1,1 +1,1 @@
-[{"name":"王二","gender":"男","age":28,"phone":"188888888","position":"前端开发工程师","mark":[46,53,68,28,46,57],"average":50,"createTime":1604072495212}]
+[{"userId":1,"phone":"188888888","age":28,"name":"王二","gender":"男","position":"前端开发工程师","mark":[95,54,95,97,79,93],"average":86,"createTime":1604075106338},{"phone":"188888881","age":28,"name":"李四","gender":"男","position":"前端开发工程师","mark":[28,31,54,42,35,39],"average":38,"createTime":1604075513600}]

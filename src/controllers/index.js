@@ -5,12 +5,12 @@ const controller = {
 
   getResult ( ctx, next ) {
     // 判断手机号是否传递，不传会报错
-    const requestBody = { ...ctx.request.phone }
+    const requestBody = { ...ctx.request.body }
     if (!requestBody.phone) {
       ctx.body = {
         code: 200,
         success: false,
-        message: '请先去面试'
+        message: '面试者的手机号不能为空'
       };
       
       next();
@@ -37,10 +37,19 @@ const controller = {
       console.log(error)
     }
 
-    ctx.body = {
+    const responseData = {
       code: 200,
       success: !!resut,
-      data: resut ? resut : null
+    }
+
+    if (!resut) {
+      responseData.msg = '没有要查询的结果'
+    } else {
+      responseData.data = resut
+    }
+
+    ctx.body = {
+      ...responseData
     };
 
     next()
