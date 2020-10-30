@@ -1,23 +1,19 @@
 {
-  "name": "koa-react-isomorphic",
+  "name": "koa",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "epm-ui-boot-koa start",
-    "start:dev": "epm-ui-boot-dev start",
-    "build": "epm-ui-boot-dev build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "epm-ui-boot-koa": "0.1.0-alpha.1",
     "koa": "^2.3.0",
+    "koa-bodyparser": "^4.3.0",
     "koa-router": "^7.2.1"
   },
   "devDependencies": {
-    "epm-ui-boot-dev": "0.1.0-alpha.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1"
