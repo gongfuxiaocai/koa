@@ -14,6 +14,6 @@ app.use( router.routes() );
 
 app.use(router.allowedMethods());
 
-app.listen( 8888, () => {
+app.listen( 80, () => {
   console.log('listen port: 8888')
 } );
